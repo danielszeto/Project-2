@@ -1,0 +1,29 @@
+<h1> This is the page where new users can sign up </h1>
+
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.text_field :first_name, placeholder: "First Name" %>
+  </div>
+  <div>
+    <%= f.text_field :last_name, placeholder: "Last Name" %>
+  </div>
+    <div>
+    <%= f.text_field :age, placeholder: "Age" %>
+  </div>
+    <div>
+    <%= f.select :location, [['Sunset', 'sunset'],['Richmond','richmond'],['Marina','marina'],['Mission','mission'],['SOMA','soma'],['Pacific Heights','pacific heights'],['Nob Hill','nob hill']] %>
+  </div>
+   <div>
+    <%= f.text_field :bio, placeholder: "Bio" %>
+  </div>
+   <div>
+    <%= f.select :kind, [['Buyer','buyer'],['Seller','seller']]%>
+  </div>
+  <div>
+    <%= f.text_field :email, placeholder: "Email" %>
+  </div>
+  <div>
+    <%= f.password_field :password, placeholder: "Password" %>
+  </div>
+  <%= f.submit "Sign Up" %>
+<% end %> 
