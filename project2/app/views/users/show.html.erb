@@ -3,13 +3,19 @@
 
 </div>
 
-<div>
+<div class="profile">
 Age:<%= @user.age%> <br />
 Location:<%= @user.location%> <br />
 Bio:<%= @user.bio%> <br />
 User:<%= @user.kind%> <br />
 </div>
 
-<div>
+<h5><%= link_to "Edit Profile", edit_user_path(@user)%></h5>
+<h5><%= link_to 'Delete Profile', @user, method: :delete %></h5>
+
+<div class="whatimselling">
 What i'm selling:
 </div>
+
+
+

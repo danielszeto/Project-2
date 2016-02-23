@@ -2,47 +2,18 @@
 <html>
 <head>
   <title>Project2</title>
+   <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
-<header class='clearfix'>
-  <div class="left-nav">
-    <ul>
-      <li><%= link_to "Home", users_path %></li>
-    </ul>
-  </div>
-  <% if not current_user %>
-        <div class="right-nav">
-      <ul>
-        <li><%= link_to "Sign Up", new_user_path %></li>
-      </ul>
-    </div>
-        <div class="right-nav">
-      <ul>
-        <li><%= link_to "Log In", sign_in_path %></li>
-      </ul>
-    </div>
-    <%else%>
-       <div class="right-nav">
-      <ul>
-        <li><%= link_to "Sign out", logout_path, :method => :delete %></li>
-      </ul>
-      </div>
-    <div class="right-nav">
-      <ul>
-        <li><%= link_to "Add Product", new_product_path %></li>
-      </ul>
-    </div>
-        <div class="right-nav">
-      <ul>
-        <li><%= link_to "Profile", users_path %></li>
-      </ul>
-      </div>
-  <%end%>
 
-</header>
+  <header class='clearfix'>
+    <%= render "shared/nav" %>
+  </header>
+
 
 <div class='content'>
   <%= yield %>
