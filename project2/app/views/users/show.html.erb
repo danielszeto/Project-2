@@ -1,17 +1,16 @@
-<div>
-  Welcome, <%= @user.first_name%> <%= @user.last_name%>  
 
-</div>
 
 <div class="profile">
+<%= @user.first_name%> <%= @user.last_name%>   <br />
 Age:<%= @user.age%> <br />
 Location:<%= @user.location%> <br />
 Bio:<%= @user.bio%> <br />
 User:<%= @user.kind%> <br />
 </div>
 
-<h5><%= link_to "Edit Profile", edit_user_path(@user)%></h5>
-<h5><%= link_to 'Delete Profile', @user, method: :delete %></h5>
+
+<h5 class='nav-link btn btn-default'><%= link_to "Edit Profile", edit_user_path(@user)%></h5>
+<h5 class='nav-link btn btn-default'><%= link_to 'Delete Profile', @user, method: :delete %></h5>
 
 <div class="whatimselling">
 
@@ -20,7 +19,11 @@ What i'm selling:
 <br />
 
 <% @user.products.each do |p| %>
-	<%=p.description %> <br />
+	Description: <%=p.description %> <br />
+	Category: <%=p.category %> <br />
+	Available:<%=p.available %> <br />
+
+<%= link_to "Edit Product", edit_product_path(@user.products)%><br />
 <%end%>
 
 </div>

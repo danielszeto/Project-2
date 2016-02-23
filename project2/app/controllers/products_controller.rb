@@ -25,10 +25,38 @@ class ProductsController < ApplicationController
 
   end
 
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    @product.update_attributes(user_params)
+    redirect_to user_path
+  end
+
 	def show
 		@product = Product.find(params[:id])
 		render :show
 	end
+
+  # def regular
+  #   @product = Product.find(params[:id])
+  #   if product.category == "regular"
+  #   end
+
+  # end
+
+  # def organic
+  # end
+
+  # def glutonfree
+  # end
+
+  # def vegan
+  # end
+
+
 
   private
 
