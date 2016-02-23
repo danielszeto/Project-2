@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
-	has_many :products
 	has_many :transactions
+  has_many :products, through: :transactions
 
 	# has_many :products, through: :transactions
 

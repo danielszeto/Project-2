@@ -33,6 +33,8 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+    # TODO: get the user's products & pass them to the view
+    # @products = @user.products
 		render :show
 	end
 

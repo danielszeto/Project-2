@@ -10,22 +10,25 @@ class ProductsController < ApplicationController
 	end
 
 	def create
-	    
-	    @product = Product.new(user_params)
-
+    @product = Product.new(user_params)
+    @product.users.push(current_user)
+    # TODO: associate's the product with the current as the creator
+    # @product.user = current_user
 	  if @product.save
 			redirect_to user_path(current_user)
-      else 
+    else 
 			render :new
 	  end
 
-  	end
+    # @product.users.push(current_user)
+    # redirect_to user_path(current_user)
 
-  	def show
-  		@product = Product.find(params[:id])
-  		render :show
+  end
 
-  	end
+	def show
+		@product = Product.find(params[:id])
+		render :show
+	end
 
   private
 

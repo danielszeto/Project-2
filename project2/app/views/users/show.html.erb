@@ -14,8 +14,17 @@ User:<%= @user.kind%> <br />
 <h5><%= link_to 'Delete Profile', @user, method: :delete %></h5>
 
 <div class="whatimselling">
+
 What i'm selling:
+
+<br />
+
+<% @user.products.each do |p| %>
+	<%=p.description %> <br />
+<%end%>
+
 </div>
+
 
 
 
