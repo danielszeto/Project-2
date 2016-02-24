@@ -16,3 +16,96 @@
  @import "bootstrap";
  */
 
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	font-family: 'Oxygen', sans-serif;
+}
+
+.jumbotron {
+	background-image: url('/image1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.signup {
+	text-align: center;
+	font-family: 'Oxygen', sans-serif;
+}
+
+.signin {
+	text-align: center;
+	font-family: 'Oxygen', sans-serif;
+	
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Oxygen', sans-serif;
+}
+
+h2 {
+	text-align: center;
+	font-family: 'Oxygen', sans-serif;
+	font-size: 20px;
+	
+}
+
+.signupfields {
+	padding: 5px
+}
+
+
+.categories-box {
+	width: 50%;
+	margin: auto;
+	position: relative;
+}
+
+#frontpageproduct1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#frontpageproduct2 {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#frontpageproduct3 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+#frontpageproduct4 {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.nav-link {
+	display: inline;
+}
+
+.profile {
+	padding: 10px;
+}
+
+.allproducts {
+	list-style-type: none;
+	width: 200px;
+	float: left;
+
+}
+
+.userpostings {
+	border-style: solid;
+	border-color: black;
+}

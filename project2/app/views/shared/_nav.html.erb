@@ -1,33 +1,37 @@
 <div class="left-nav">
   <ul>
-    <li><%= link_to "BakR", users_path %></li>
+    <%= link_to "BakR", users_path %>
   </ul>
 </div>
 <% if !current_user %>
   <div class="right-nav">
     <ul>
-      <li><%= link_to "Sign Up", new_user_path %></li>
+      <%= link_to "Sign Up", new_user_path %>
     </ul>
   </div>
   <div class="right-nav">
     <ul>
-      <li><%= link_to "Log In", sign_in_path %></li>
+      <%= link_to "Log In", sign_in_path %>
     </ul>
   </div>
 <% else %>
   <div class="right-nav">
     <ul>
-      <li><%= link_to "Sign out", logout_path, :method => :delete %></li>
+      <%= link_to "Sign out", logout_path, :method => :delete %>
     </ul>
     </div>
   <div class="right-nav">
     <ul>
-      <li><%= link_to "Add Product", new_product_path %></li>
+      <%= link_to "Add Product", new_product_path %>
     </ul>
   </div>
+   <div class="right-nav">
+    <ul>
+      <%= link_to "Products", products_path %>
+    </ul>
   <div class="right-nav">
     <ul>
-      <li><%= link_to "Profile", user_path(current_user) %></li>
+      <%= link_to "Profile", user_path(current_user) %>
     </ul>
   </div>
 <% end %>

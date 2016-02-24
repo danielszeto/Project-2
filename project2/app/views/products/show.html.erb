@@ -2,9 +2,13 @@
 What i'm selling:
 </div>
 
-<div>
-Description:<%= @product.description%> <br />
-Available:<%= @product.available%> <br />
-Category:<%= @product.category%> <br />
-</div>
+<% @product.each do |p| %>
+<div class="userpostings">
 
+	Description: <%=p.description %> <br />
+	Category: <%=p.category %> <br />
+	Available:<%=p.available %> <br />
+	<h5 class='nav-link btn btn-default'><%= link_to "Edit Posting", edit_product_path(p)%></h5>
+	</div>
+	<br />
+<%end%>

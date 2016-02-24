@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
 
 	def index
-		@products = Product.new
+		@products = Product.all
+    render :index
 	end
 
 	def new
@@ -30,31 +31,30 @@ class ProductsController < ApplicationController
   end
 
   def update
+    updated_params = params.require(:product).permit(:description, :category, :available)
     @product = Product.find(params[:id])
-    @product.update_attributes(user_params)
-    redirect_to user_path
+    @product.update_attributes(updated_params)
+    redirect_to current_user
   end
 
 	def show
-		@product = Product.find(params[:id])
+		@product = Product.all
 		render :show
 	end
 
-  # def regular
-  #   @product = Product.find(params[:id])
-  #   if product.category == "regular"
-  #   end
+  def regular
+    @product = Product.find(params[:id])
 
-  # end
+  end
 
-  # def organic
-  # end
+  def organic
+  end
 
-  # def glutonfree
-  # end
+  def glutonfree
+  end
 
-  # def vegan
-  # end
+  def vegan
+  end
 
 
 
