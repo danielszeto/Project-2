@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-
+  has_many :products # products they are selling
 	has_many :transactions
-  has_many :products, through: :transactions
+  has_many :products, through: :transactions, as: :favorites # products they are interested in buying
 
 	# has_many :products, through: :transactions
 

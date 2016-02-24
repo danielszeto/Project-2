@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
 
 	def index
-		@products = Product.all
+    if params[:type]
+      @products = Product.where(category: params[:type])
+    else
+		  @products = Product.all
+    end
     render :index
 	end
 
@@ -13,6 +17,7 @@ class ProductsController < ApplicationController
 	def create
     @product = Product.new(user_params)
     @product.users.push(current_user)
+    @product.user = current_user
     # TODO: associate's the product with the current as the creator
     # @product.user = current_user
 	  if @product.save
@@ -39,22 +44,29 @@ class ProductsController < ApplicationController
 
 	def show
 		@product = Product.all
-		render :show
+		
 	end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to current_user
+  end
 
   def regular
     @product = Product.find(params[:id])
+    render :re
 
   end
 
-  def organic
-  end
+  # def organic
+  # end
 
-  def glutonfree
-  end
+  # def glutonfree
+  # end
 
-  def vegan
-  end
+  # def vegan
+  # end
 
 
 

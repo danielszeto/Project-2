@@ -29,6 +29,7 @@ Things i'm selling:
 	Category: <%=p.category %> <br />
 	Available:<%=p.available %> <br />
 	<h5 class='nav-link btn btn-default'><%= link_to "Edit Posting", edit_product_path(p)%></h5>
+	<h5 class='nav-link btn btn-default'><%= link_to 'Delete Posting', p, method: :delete %></h5>
 	</div>
 	<br />
 <%end%>

@@ -1,23 +1,25 @@
 Rails.application.routes.draw do
 
+  root to: "pages#home"
+
   resources :users
+
+  get "/sign_in", to: "sessions#new"
+
+  post "/sessions", to: "sessions#create"
+
+  delete "/logout", to: "sessions#destroy", as: "logout"
+
+  # get "products/regular", to: "products#show", as: "regular"
+  # get "products/organic", to: "products#organic", as: "organic"
+  # get "products/glutonfree", to: "products#glutonfree", as: "glutonfree"
+  # get "products/vegan", to: "products#show", as: "vegan"
   resources :products 
 
-   get "/sign_in", to: "sessions#new"
-
-   post "/sessions", to: "sessions#create"
-
-   delete "/logout", to: "sessions#destroy", as: "logout"
-
-   get "products/regular", to: "products#show", as: "regular"
-   get "products/organic", to: "products#show", as: "organic"
-   get "products/glutonfree", to: "products#show", as: "glutonfree"
-   get "products/vegan", to: "products#show", as: "vegan"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
 
 #       Prefix Verb   URI Pattern                    Controller#Action
 #        users GET    /users(.:format)               users#index

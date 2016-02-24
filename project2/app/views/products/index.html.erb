@@ -1,12 +1,24 @@
 
+
+
 <% @products.each do |p| %>
+<% @product.user.each do |u| %>
+<div class="square">
+    <div class="content">
+        <div class="table">
+            <div class="table-cell">
+            	  <div class="span9">
+                <%=u.firstname %> 
+	Description: <%=p.description %> <br />
+	Category: <%=p.category %> <br />
+	Available:<%=p.available %> <br />
 
-<ul class="allproducts">
-	<li>Description: <%=p.description %> <br /></li>
-	<li>Category: <%=p.category %> <br /></li>
-	<li>Available:<%=p.available %> <br /></li>
+	<button>Email Bakr</button>
+				  </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-</ul>
-
-
+<%end%>
 <%end%>

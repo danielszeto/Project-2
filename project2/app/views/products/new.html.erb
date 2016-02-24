@@ -1,15 +1,20 @@
-<h1> This is where you can add new products </h1>
+<h1> What are you selling?</h1>
 
+<div class ="addingproducts">
 <%= form_for @product do |f| %>
   <div>
     <%= f.text_field :description, placeholder: "Description" %>
   </div>
+  <br />
   <div>
     <%= f.text_field :available, placeholder: "Avaiable" %>
   </div>
+  <br />
     <div>
     <%= f.select :category, [['Regular','regular'],['Vegan','vegan'],['Organic','organic'],['Gluton Free','gluton free']]%>
   </div>
+  <br />
 
-  <%= f.submit "Add Product" %>
+  <%=f.submit "Add Product" %>
 <% end %> 
+</div>
