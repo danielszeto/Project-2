@@ -70,29 +70,6 @@ h2 {
 	text-align: center;
 }
 
-#frontpageproduct1 {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-#frontpageproduct2 {
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-
-#frontpageproduct3 {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-}
-
-#frontpageproduct4 {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-}
 
 .nav-link {
 	display: inline;
@@ -161,7 +138,7 @@ h2 {
 }
 
 .frontpage {
-	margin: 0px 50px 50px 0px;
+	margin: 160px 0px 50px 0px;
 }
 
 .editprofile {
@@ -170,6 +147,57 @@ h2 {
 }
 
 .editproducts {
+	text-align: center;
+}
+
+.homesquare1 {
+    width: 100%;
+    height: 100%;
+    padding-bottom : 100%; /* = width for a 1:1 aspect ratio */
+    margin:1%;
+    overflow:hidden;
+    padding: 100px;
+    background-image: url('/donuts.jpg');
+    background-size: cover;
+
+
+
+}
+.homesquare2 {
+    width: 100%;
+    height: 100%;
+    padding-bottom : 100%; /* = width for a 1:1 aspect ratio */
+    margin:1%;
+    overflow:hidden;
+    padding: 100px;
+    background-image: url('/pie.jpg');
+    background-size: cover;
+
+}
+.homesquare3 {
+    width: 100%;
+    height: 100%;
+    padding-bottom : 100%; /* = width for a 1:1 aspect ratio */
+    margin:1%;
+    overflow:hidden;
+    padding: 100px;
+    background-image: url('/cookies.jpg');
+    background-size: cover;
+
+}
+.homesquare4 {
+    width: 100%;
+    height: 100%;
+    padding-bottom : 100%; /* = width for a 1:1 aspect ratio */
+    margin:1%;
+    overflow:hidden;
+    padding: 100px;
+    background-image: url('/macarons.jpg');
+    background-size: cover;
+
+}
+
+.categorytitles {
 	text-align: center;
 }
 
