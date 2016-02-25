@@ -1,5 +1,6 @@
 <h1> Edit </h1>
 
+<div class="editproducts">
 <%= form_for @product do |f| %>
   <div>
     <%= f.text_field :description, placeholder: "Description" %>
@@ -8,8 +9,9 @@
     <%= f.text_field :available, placeholder: "Avaiable" %>
   </div>
     <div>
-    <%= f.select :category, [['Regular','Regular'],['Vegan','Vegan'],['Organic','Organic'],['Gluton Free','Gluton Free']]%>
+    Category: <%= f.select :category, [['Regular','Regular'],['Vegan','Vegan'],['Organic','Organic'],['Gluton Free','Gluton Free']]%>
   </div>
 
   <%= f.submit "Edit Changes" %>
 <% end %> 
+</div>

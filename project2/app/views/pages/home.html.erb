@@ -1,1 +1,27 @@
-<h1>Welcome HOME!</h1>
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="frontpage">Welcome to BakR</h1> 
+    <p>Sell and find baked things here.</p> 
+  </div>
+  <h1> Categories </h1>
+
+  <div class='categories-box'>
+			<div class="col-xs-6">
+			<%= link_to "Regular", products_path(type: "regular") %>
+			<p>Pictures goes here</p>
+			</div>
+			<div class="col-xs-6">
+			<%= link_to "Organic", products_path(type: "organic") %>
+			<p>Pictures goes here</p>
+			</div>
+			<div class="col-xs-6">
+			<%= link_to "Gluton Free", products_path(type: "glutonfree") %>
+			<p>Pictures goes here</p>
+			</div>
+			<div class="col-xs-6">
+			<%= link_to "Vegan", products_path(type: "vegan") %>
+			<p>Pictures goes here</p>
+			</div>
+
+
+</div>

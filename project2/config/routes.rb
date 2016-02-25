@@ -10,10 +10,7 @@ Rails.application.routes.draw do
 
   delete "/logout", to: "sessions#destroy", as: "logout"
 
-  # get "products/regular", to: "products#show", as: "regular"
-  # get "products/organic", to: "products#organic", as: "organic"
-  # get "products/glutonfree", to: "products#glutonfree", as: "glutonfree"
-  # get "products/vegan", to: "products#show", as: "vegan"
+
   resources :products 
 
   # The priority is based upon order of creation: first created -> highest priority.

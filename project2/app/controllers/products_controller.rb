@@ -15,7 +15,10 @@ class ProductsController < ApplicationController
 	end
 
 	def create
-    @product = Product.new(user_params)
+    # @user = User.find(params[:user_id])
+    # @product = @user.products.build(product_params)
+
+    @product = Product.new(product_params)
     @product.users.push(current_user)
     @product.user = current_user
     # TODO: associate's the product with the current as the creator
@@ -53,26 +56,12 @@ class ProductsController < ApplicationController
     redirect_to current_user
   end
 
-  def regular
-    @product = Product.find(params[:id])
-    render :re
-
-  end
-
-  # def organic
-  # end
-
-  # def glutonfree
-  # end
-
-  # def vegan
-  # end
 
 
 
   private
 
-  def user_params
+  def product_params
 
   params.require(:product).permit(:description, :category, :available)
   

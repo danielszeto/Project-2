@@ -2,16 +2,19 @@
 
 
 <% @products.each do |p| %>
-<% @product.user.each do |u| %>
 <div class="square">
     <div class="content">
         <div class="table">
             <div class="table-cell">
             	  <div class="span9">
-                <%=u.firstname %> 
+
+    <% p.users.each do |user| %>
+    <%= user.first_name %>
+    <% end %>
 	Description: <%=p.description %> <br />
 	Category: <%=p.category %> <br />
 	Available:<%=p.available %> <br />
+
 
 	<button>Email Bakr</button>
 				  </div>
@@ -21,4 +24,4 @@
 </div>
 
 <%end%>
-<%end%>
+
