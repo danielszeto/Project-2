@@ -8,7 +8,6 @@
 Age:<%= @user.age%> <br />
 Location:<%= @user.location%> <br />
 Bio:<%= @user.bio%> <br />
-User:<%= @user.kind%> <br />
 </div>
 
 
@@ -30,7 +29,7 @@ User:<%= @user.kind%> <br />
 
 	Description: <%=p.description %> <br />
 	Category: <%=p.category %> <br />
-	Available:<%=p.available %> <br />
+	Available:<%=p.available %> <br /><br />
 	<h5 class='nav-link btn btn-default'><%= link_to "Edit Posting", edit_product_path(p)%></h5>
 	<h5 class='nav-link btn btn-default'><%= link_to 'Delete Posting', p, method: :delete %></h5>
 	</div>

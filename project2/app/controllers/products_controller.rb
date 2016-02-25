@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 
 	def index
     if params[:type]
-      @products = Product.where(category: params[:type])
+      @products = Product.where(category: params[:type]) #tolowercase
     else
 		  @products = Product.all
     end

@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
 	validates :age, presence: true
 	validates :location, presence: true
 	validates :bio, presence: true
-	validates :kind, presence: true
 	validates :email, uniqueness: true
 
 	validates :password, :presence => true,

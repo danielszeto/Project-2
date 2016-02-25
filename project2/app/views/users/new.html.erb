@@ -1,4 +1,4 @@
-<h1> Sign up for the app! </h1>
+<h1> Sign up for BakR! </h1>
 
 <div class="signup">
 <%= form_for @user do |f| %>
@@ -16,9 +16,6 @@
   </div>
   <div class="signupfields">
     <%= f.text_field :bio, placeholder: "Bio" %>
-  </div>
-   <div>
-    <%= f.select :kind, [['Buyer','buyer'],['Seller','seller']]%>
   </div>
   <div class="signupfields">
     <%= f.text_field :email, placeholder: "Email" %>

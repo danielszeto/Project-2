@@ -9,14 +9,15 @@
             	  <div class="span9">
 
     <% p.users.each do |user| %>
-    <%= user.first_name %>
-    <% end %>
+    <h1> <%= user.first_name %> is selling </h1><br />
+
 	Description: <%=p.description %> <br />
 	Category: <%=p.category %> <br />
-	Available:<%=p.available %> <br />
+	Available:<%=p.available %> <br /><br /><br />
 
-
-	<button>Email Bakr</button>
+    
+    <h5 class='nav-link btn btn-default'><a href="mailto:<%= user.email%>">Email: <%=user.first_name%></a></h5>
+    <% end %>
 				  </div>
             </div>
         </div>
