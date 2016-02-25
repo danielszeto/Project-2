@@ -25,6 +25,7 @@ body {
 }
 
 .jumbotron {
+	font-family: 'Oxygen', sans-serif;
 	background-image: url('/image1.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -37,12 +38,13 @@ body {
 .signup {
 	text-align: center;
 	font-family: 'Oxygen', sans-serif;
+	margin: 30px;
+	padding: 30px;
 }
 
-.signin {
-	text-align: center;
+.newuser {
 	font-family: 'Oxygen', sans-serif;
-	padding: 10px;
+
 	
 }
 
@@ -123,14 +125,23 @@ h2 {
 	margin: 10px;
 }
 
+.header-newprod{
+	margin-top: 100px;
+
+}
+
 .fixed-nav-bar {
   position: fixed;
-  top: 0;
+/*  top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 9999;*/
   width: 100%;
-  height: 50px;
-  background-color: white;
+  height: 75px;
+  background-color: #FEFEFA;
+  color: #F8F8FF;
+  font-size: 18px;
+  font-weight: bold;
+
 }
 
 .everything {
@@ -199,5 +210,6 @@ h2 {
 
 .categorytitles {
 	text-align: center;
+	font-size: 28px;
 }
 

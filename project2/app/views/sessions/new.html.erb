@@ -1,18 +1,35 @@
 
-<h1>Sign In</h1>
-<div class="signin">
+<div class="login">
+<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
 <%= form_for @user, url: "/sessions", method: "post" do |f| %>
-  <div>
-    Email: <%= f.text_field :email, placeholder: "Email" %>
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h1 class="text-center">Login</h1>
+      </div>
+      <div class="modal-body">
+          <form class="form col-md-12 center-block">
+            <div class="form-group">
+            <input type="text" class="form-control input-lg" <%= f.text_field :email, placeholder: "Email" %>
+            </div>
+            <div class="form-group">
+            <input type="password" class="form-control input-lg" <%= f.password_field :password, placeholder: "Password" %>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary btn-lg btn-block">Sign In</button>
+              <span class="pull-right"><a href= <%=new_user_path%> >Register</a></span><span><a href="#">Need help?</a></span>
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+	
+      </div>
   </div>
-  <br />
-  <div>
-    Password:<%= f.password_field :password, placeholder: "Password" %>
   </div>
-  <br />
-  <%= f.submit "Sign In" %>
-<% end %> 
 
-<p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+  <% end %> 
+	</div>
 
 </div>
+</div>	
