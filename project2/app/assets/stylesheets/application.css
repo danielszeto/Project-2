@@ -159,6 +159,8 @@ h2 {
 
 .editproducts {
 	text-align: center;
+	padding: 30px;
+	margin: 10px;
 }
 
 .homesquare1 {
@@ -211,5 +213,9 @@ h2 {
 .categorytitles {
 	text-align: center;
 	font-size: 28px;
+}
+
+.editproductfields {
+	padding: 10px;
 }
 

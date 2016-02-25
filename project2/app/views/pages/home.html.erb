@@ -8,10 +8,10 @@
 
 			<div class="col-xs-6">
 				<div class="categorytitles">
-					<%= link_to "Regular", products_path(type: "Regular") %>
+					<%= link_to "Regular", products_path(type: "Regular").downcase %>
 				</div>
 
-				<%= link_to products_path(type: "Regular") do %>
+				<%= link_to products_path(type: "Regular").downcase do %>
 					<div class="homesquare1" >
 					</div>
 				<%end%>
@@ -19,9 +19,9 @@
 
 			<div class="col-xs-6">
 				<div class="categorytitles">
-					<%= link_to "Organic", products_path(type: "Organic") %>
+					<%= link_to "Organic", products_path(type: "Organic").downcase %>
 				</div>
-				<%= link_to products_path(type: "Organic") do %>
+				<%= link_to products_path(type: "Organic").downcase do %>
 					<div class="homesquare2">
 					</div>
 				<%end%>
@@ -29,9 +29,9 @@
 
 			<div class="col-xs-6">
 				<div class="categorytitles">
-					<%= link_to "Gluton Free", products_path(type: "Glutonfree") %>
+					<%= link_to "Gluton Free", products_path(type: "Glutonfree").downcase %>
 				</div>
-			<%= link_to products_path(type: "Glutonfree") do%>
+			<%= link_to products_path(type: "Glutonfree").downcase do%>
 				<div class="homesquare3">
 				</div>
 			<%end%>

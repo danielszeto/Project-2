@@ -1,17 +1,19 @@
-<h1> Edit </h1>
+
 
 <div class="editproducts">
+<h1> Edit </h1>
 <%= form_for @product do |f| %>
-  <div>
+  <div class="editproductfields">
     <%= f.text_field :description, placeholder: "Description" %>
   </div>
-  <div>
+  <div class="editproductfields">
     <%= f.text_field :available, placeholder: "Avaiable" %>
   </div>
-    <div>
+    <div class="editproductfields">
     Category: <%= f.select :category, [['Regular','Regular'],['Vegan','Vegan'],['Organic','Organic'],['Gluton Free','Gluton Free']]%>
   </div>
-
+<div class="editproductfields">
   <%= f.submit "Edit Changes" %>
+  </div>
 <% end %> 
 </div>
