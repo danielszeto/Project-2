@@ -9,10 +9,12 @@
 				Location:<%= @user.location%> <br />
 				Bio:<%= @user.bio%> <br />
 		</div>
-
+<%if !current_user%>
 
 		<h5 class='nav-link btn btn-default'><%= link_to "Edit Profile", edit_user_path(@user)%></h5>
 		<h5 class='nav-link btn btn-default'><%= link_to 'Delete Profile', @user, method: :delete %></h5>
+
+<%end%>
 	</div>
 
 <div class="col-xs-6">
@@ -30,8 +32,11 @@
 			Category: <%=p.category %> <br />
 			Available:<%=p.available %> <br />
 			<%= image_tag p.product_url, :size => '260x260'%> <br />
+
+		<%if !current_user%>
 			<h5 class='nav-link btn btn-default'><%= link_to "Edit Posting", edit_product_path(p)%></h5>
 			<h5 class='nav-link btn btn-default'><%= link_to 'Delete Posting', p, method: :delete %></h5>
+		<%end%>
 			</div>
 			<br />
 <%end%>
