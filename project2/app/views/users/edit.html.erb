@@ -17,6 +17,10 @@
    <div>
     Bio: <%= f.text_field :bio, placeholder: "Bio" %>
   </div>
+
+  <div>
+  <input type="hidden" role="uploadcare-uploader" name="user[file]"/>
+  </div>
  
   <%= f.submit "Make Changes" %>
 <% end %> 

@@ -12,8 +12,6 @@
  *
 *= require_self
 *= require_tree .
- @import "bootstrap-sprockets";
- @import "bootstrap";
  */
 
 // Place all the styles related to the users controller here.
@@ -31,7 +29,8 @@ body {
 	background-size: cover;
 	color: white;
 	/*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
-	height: 500px;
+	height: 600px;
+    margin-top: 40px;
 
 }
 
@@ -40,6 +39,16 @@ body {
 	font-family: 'Oxygen', sans-serif;
 	margin: 30px;
 	padding: 30px;
+}
+
+.signin {
+    text-align: center;
+    font-family: 'Oxygen', sans-serif;
+    margin: 30px;
+    padding: 30px;
+}
+.signinform {
+   padding:8px;
 }
 
 .newuser {
@@ -73,8 +82,14 @@ h2 {
 }
 
 
-.nav-link {
-	display: inline;
+.navbar {
+    background-color: black;
+    font-size: 18px;
+}
+
+.navbar a {
+    color:white;
+    padding: 10px;
 }
 
 .profile {
@@ -130,19 +145,7 @@ h2 {
 
 }
 
-.fixed-nav-bar {
-  position: fixed;
-/*  top: 0;
-  left: 0;
-  z-index: 9999;*/
-  width: 100%;
-  height: 75px;
-  background-color: #FEFEFA;
-  color: #F8F8FF;
-  font-size: 18px;
-  font-weight: bold;
 
-}
 
 .everything {
 	margin: 35px;

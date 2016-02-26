@@ -1,27 +1,26 @@
 
 
-
 <% @products.each do |p| %>
-<div class="square">
-    <div class="content">
-        <div class="table">
-            <div class="table-cell">
-            	  <div class="span9">
+<div>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      
+      <div class="caption">
+           <% p.users.each do |user| %>
 
-    <% p.users.each do |user| %>
     <h1> <%= user.first_name %> is selling </h1><br />
 
-	Description: <%=p.description %> <br />
-	Category: <%=p.category %> <br />
-	Available:<%=p.available %> <br /><br /><br />
+    Description: <%=p.description %> <br />
+    Category: <%=p.category %> <br />
+    Available:<%=p.available %> <br /><br /><br />
+    <%= image_tag p.product_url, :size => '260x180'%>
 
     
     <h5 class='nav-link btn btn-default'><a href="mailto:<%= user.email%>">Email: <%=user.first_name%></a></h5>
     <% end %>
-				  </div>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <%end%>

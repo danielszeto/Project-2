@@ -29,9 +29,9 @@
 
 			<div class="col-xs-6">
 				<div class="categorytitles">
-					<%= link_to "Gluton Free", products_path(type: "Glutonfree").downcase %>
+					<%= link_to "Gluten Free", products_path(type: "Glutenfree").downcase %>
 				</div>
-			<%= link_to products_path(type: "Glutonfree").downcase do%>
+			<%= link_to products_path(type: "glutenfree").downcase do%>
 				<div class="homesquare3">
 				</div>
 			<%end%>
@@ -41,7 +41,7 @@
 
 			<div class="col-xs-6">
 				<div class="categorytitles">
-					<%= link_to "Vegan", products_path(type: "Vegan") %>
+					<%= link_to "Vegan", products_path(type: "Vegan").downcase %>
 				</div>
 
 			<%= link_to products_path(type: "Vegan") do %>

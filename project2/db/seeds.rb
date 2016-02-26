@@ -9,3 +9,14 @@ User.destory_all
 Product.destory_all
 Transaction.destory_all
 
+User.create ({
+ email: "daniel@daniel.com",
+ first_name: "daniel",
+ last_name: "Szeto",
+ password_digest: "Password",
+ location: "sunset",
+ bio: "I like ice cream and things",
+ kind: nil,
+ age: 25,
+  })
+

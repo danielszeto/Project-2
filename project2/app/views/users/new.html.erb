@@ -2,6 +2,7 @@
 
 <div class="signup">
 <h1> Sign up for BakR! </h1>
+
 <%= form_for @user do |f| %>
   <div class="signupfields">
     <%= f.text_field :first_name, placeholder: "First Name" %>
@@ -24,6 +25,12 @@
   <div class="signupfields">
     <%= f.password_field :password, placeholder: "Password" %>
   </div>
+  <div class="signupfields">
+
+    <input type="hidden" role="uploadcare-uploader" name="user[file]"/>
+
+  </div>
+
   <%= f.submit "Sign Up", class: "btn btn-success" %>
 <% end %> 
 <div>

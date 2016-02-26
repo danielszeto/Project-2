@@ -9,16 +9,13 @@
   <div>
     <%= f.text_field :description, placeholder: "Description" %>
   </div>
-  <br />
   <div>
     <%= f.text_field :available, placeholder: "Avaiable" %>
   </div>
-  <br />
-    <div>
-    <%= f.select :category, [['Regular','Regular'],['Vegan','Vegan'],['Organic','Organic'],['Glutonfree','Glutonfree']]%>
+  <div>
+    <%= f.select :category, [['Regular','regular'],['Vegan','vegan'],['Organic','organic'],['Glutenfree','glutenfree']]%>
   </div>
-  <br />
-
+  <input type="hidden" role="uploadcare-uploader" name="product[product_url]"/>
   <%=f.submit "Add Product" %>
 <% end %> 
 </div>
