@@ -2,7 +2,9 @@
 
 # Description
 
-BakR connects home bakers with customers. Users can create an account and post things that they are baking. Buyers can sort on baked goods based on their dietary needs. 
+* BakR connects home bakers with customers. 
+* Users can create an account and post things that they are baking. 
+* Buyers can sort on baked goods based on their dietary needs. 
 
 https://bakr.herokuapp.com/
 
@@ -22,11 +24,16 @@ Trello: https://trello.com/b/WMBvtgtZ/project-2
 
 # How to Contribute
 
-Email me at d.szeto123@gmail.com for any questions or concerns.
+* Email me at d.szeto123@gmail.com for any questions or concerns.
 
 
-Nice-to-haves
-* 
+# Nice-to-haves
+* Add for categories
+* Add a feature to favorite bakers
+* Add google maps location
+
+# Etc
+* Shout-outs to Illias and all my classmates
 
 
 
