@@ -1,0 +1,261 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	font-family: 'Oxygen', sans-serif;
+}
+
+.jumbotron {
+	font-family: 'Oxygen', sans-serif;
+	background-image: -webkit-linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('/image1.jpg');
+	background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('/image1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	/*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+	height: 600px;
+    margin-top: 40px;
+
+}
+
+.signup {
+	text-align: center;
+	font-family: 'Oxygen', sans-serif;
+	margin: 30px;
+	padding: 30px;
+}
+
+.signin {
+    text-align: center;
+    font-family: 'Oxygen', sans-serif;
+    margin: 30px;
+    padding: 30px;
+}
+.signinform {
+   padding:8px;
+}
+
+.newuser {
+	font-family: 'Oxygen', sans-serif;
+
+	
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Oxygen', sans-serif;
+}
+
+h2 {
+	text-align: center;
+	font-family: 'Oxygen', sans-serif;
+	font-size: 20px;
+	
+}
+
+.signupfields {
+	padding: 5px
+}
+
+
+.categories-box {
+	width: 50%;
+	margin: auto;
+	position: relative;
+	text-align: center;
+}
+
+
+.navbar {
+    background-color: black;
+    font-size: 18px;
+}
+
+.navbar a {
+    color:white;
+    padding: 10px;
+}
+
+.profile {
+	padding: 10px;
+
+}
+
+.square {
+    float:left;
+    position: relative;
+    width: 30%;
+    padding-bottom : 30%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    overflow:hidden;
+    border-style: solid;
+    border-color: black;
+}
+
+.content {
+    position:absolute;
+    height:80%; /* = 100% - 2*10% padding */
+    width:90%; /* = 100% - 2*5% padding */
+    padding: 10% 5%;
+}
+.table{
+    display:table;
+    height:100%;
+    width:100%;
+}
+.table-cell{
+    display:table-cell;
+    vertical-align:middle;
+    height:100%;
+    width:100%;
+}
+
+.allproducts:hover {
+   background-position: 0 -100%;
+ }
+
+.userpostings {
+	/*border-style: solid;
+	border-color: black;*/
+}
+
+.addingproducts {
+	text-align: center;
+	padding: 30px;
+	margin: 10px;
+}
+
+.header-newprod{
+	margin-top: 100px;
+
+}
+
+
+
+.everything {
+	margin: 35px;
+}
+
+.frontpage {
+	margin: 160px 0px 50px 0px;
+}
+
+.editprofile {
+	text-align: center;
+	padding: 15px;
+}
+
+.editproducts {
+	text-align: center;
+	padding: 30px;
+	margin: 10px;
+}
+
+.homesquare1 {
+    width: 100%;
+    height: 100%;
+    padding-bottom : 100%; /* = width for a 1:1 aspect ratio */
+    margin:1%;
+    overflow:hidden;
+    padding: 100px;
+    background-image: url('/donuts.jpg');
+    background-size: cover;
+
+
+
+}
+.homesquare2 {
+    width: 100%;
+    height: 100%;
+    padding-bottom : 100%; /* = width for a 1:1 aspect ratio */
+    margin:1%;
+    overflow:hidden;
+    padding: 100px;
+    background-image: url('/pie.jpg');
+    background-size: cover;
+
+}
+.homesquare3 {
+    width: 100%;
+    height: 100%;
+    padding-bottom : 100%; /* = width for a 1:1 aspect ratio */
+    margin:1%;
+    overflow:hidden;
+    padding: 100px;
+    background-image: url('/cookies.jpg');
+    background-size: cover;
+
+}
+.homesquare4 {
+    width: 100%;
+    height: 100%;
+    padding-bottom : 100%; /* = width for a 1:1 aspect ratio */
+    margin:1%;
+    overflow:hidden;
+    padding: 100px;
+    background-image: url('/macarons.jpg');
+    background-size: cover;
+
+}
+
+.categorytitles {
+	text-align: center;
+	font-size: 28px;
+}
+
+.editproductfields {
+	padding: 10px;
+}
+
+.img-circle {
+    border-radius: 100%;
+    width: 250px;
+    height: 250px;
+
+}
+
+.newproducts {
+    padding: 5px;
+}
+
+header {
+  padding: 40px; }
+  header ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-color: black; }
+  header a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white; }
+
+.left-nav {
+  float: left;
+  margin: 10px 0px 10px 10px; }
+
+.right-nav {
+  float: right;
+  margin: 10px 10px 0px -20px; }
+
+.frontpageproduct {
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: center; }
