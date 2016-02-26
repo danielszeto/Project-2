@@ -233,4 +233,6 @@ h2 {
 .newproducts {
     padding: 5px;
 }
-
+#user_bio {
+    height: 100px;
+}

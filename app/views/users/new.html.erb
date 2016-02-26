@@ -16,8 +16,8 @@
     <div>
     <%= f.select :location, [['Sunset', 'sunset'],['Richmond','richmond'],['Marina','marina'],['Mission','mission'],['SOMA','soma'],['Pacific Heights','pacific heights'],['Nob Hill','nob hill']] %>
   </div>
-  <div class="signupfields">
-    <%= f.text_field :bio, placeholder: "Bio" %>
+  <div class="signupfields" id="signupbio">
+    <%= f.text_field :bio, placeholder: "Bio"%>
   </div>
   <div class="signupfields">
     <%= f.text_field :email, placeholder: "Email" %>
