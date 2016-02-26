@@ -1,17 +1,33 @@
-== README - BakR App
+== README
 
-BakR connects home bakers with customers. 
+##Description
+
+BakR connects home bakers with customers. Users can create an account and post things that they are baking. Buyers can sort on baked goods based on their dietary needs. 
 
 https://bakr.herokuapp.com/
 
+##Planning
 
-Things you may want to cover:
-
-* Planning
+User Stories and Wire Frames can be found on my trello.
 
 Trello: https://trello.com/b/WMBvtgtZ/project-2
 
-* System dependencies
+##Techonologies
+* Ruby 
+* Ruby on Rails
+* Bootstrap
+* HTML
+* CSS
+
+
+##How to Contribute
+
+
+##Nice-to-haves
+* 
+
+
+
 
 
 <tt>rake doc:app</tt>.
