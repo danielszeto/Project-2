@@ -18,6 +18,10 @@
 
     
     <h5 class='nav-link btn btn-default'><a href="mailto:<%= user.email%>">Email: <%=user.first_name%></a></h5>
+
+    <h5 class='nav-link btn btn-default'><%= link_to "BakR's Profile", user_path(user).downcase %></h5>
+
+
     <% end %>
       </div>
     </div>
