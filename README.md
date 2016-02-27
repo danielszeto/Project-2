@@ -28,8 +28,9 @@ Trello: https://trello.com/b/WMBvtgtZ/project-2
 
 
 # Nice-to-haves
-* Add for categories
+* Add more categories
 * Add a feature to favorite bakers
+* Add a feature for giving comments and ratings
 * Add google maps location
 
 # Etc
