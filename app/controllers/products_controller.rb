@@ -21,11 +21,11 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.users.push(current_user)
     @product.user = current_user
-    # TODO: associate's the product with the current as the creator
+    # Todo: associate's the product with the current as the creator
     # @product.user = current_user
 	  if @product.save
 			redirect_to user_path(current_user)
-    else 
+    else
 			render :new
 	  end
 
@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
 
 	def show
 		@product = Product.all
-		
+
 	end
 
   def destroy
