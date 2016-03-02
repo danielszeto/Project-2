@@ -30,6 +30,6 @@ Keep doing:
 * Great project! Among other things, you got a working auth system, RESTful nested resources, photo uploads, and search.
 * Nice job deploying
 * Solid number of commits and good messages
-* Site looks well thought out and designed
+* Site is well thought out and well designed
 
-### Result: Exeeds Expectations
+### Result: Exceeds Expectations
