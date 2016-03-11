@@ -6,7 +6,7 @@
 * Users can create an account and post things that they are baking. 
 * Buyers can sort on baked goods based on their dietary needs. 
 
-https://bakr.herokuapp.com/
+Website is deployed here: https://bakr.herokuapp.com/
 
 # Planning
 
