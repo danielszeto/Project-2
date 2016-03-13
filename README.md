@@ -35,9 +35,3 @@ Trello: https://trello.com/b/WMBvtgtZ/project-2
 
 # Etc
 * Shout-outs to Illias and all my classmates
-
-
-
-
-
-<tt>rake doc:app</tt>.
