@@ -1,4 +1,4 @@
-class Changesnameofcolumn < ActiveRecord::Migration
+class Changesnameofcolumn < ActiveRecord::Migration[4.2]
   def change
   	rename_column :users, :type, :kind
   end
