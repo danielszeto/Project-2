@@ -1,22 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-User.destory_all
-Product.destory_all
-Transaction.destory_all
-
-User.create ({
- email: "daniel@daniel.com",
- first_name: "daniel",
- last_name: "Szeto",
- password_digest: "Password",
- location: "sunset",
- bio: "I like ice cream and things",
- kind: nil,
- age: 25,
-  })
-
+# Optional demo data. Never delete real users or products during seeding.
+# Configure a demo account explicitly if you want a sample baker.
+if ENV['DEMO_BAKER_EMAIL'].present? && ENV['DEMO_BAKER_PASSWORD'].present?
+  user = User.find_or_initialize_by(email: ENV['DEMO_BAKER_EMAIL'])
+  user.assign_attributes(
+    first_name: 'Demo',
+    last_name: 'Baker',
+    password: ENV['DEMO_BAKER_PASSWORD'],
+    location: 'San Francisco',
+    bio: 'I bake fresh treats.',
+    age: 25
+  )
+  user.save!
+end
