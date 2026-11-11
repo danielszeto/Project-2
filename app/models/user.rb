@@ -1,13 +1,13 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   has_many :products, dependent: :destroy
   has_many :transactions, dependent: :destroy
   has_many :purchased_products, through: :transactions, source: :product
 
   has_secure_password
-
   validates :first_name, :last_name, :age, :location, :bio, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :password, length: { within: 6..40 }, allow_blank: true
+  validates :file, format: { with: /\Ahttps?:\/\//i, message: "must be an HTTP(S) URL" }, allow_blank: true
 
   before_validation :normalize_email
 
