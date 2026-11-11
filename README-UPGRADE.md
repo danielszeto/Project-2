@@ -4,13 +4,13 @@ This branch upgrades the **original 2016 Rails application** without replacing i
 
 ## Target runtime
 
-- Ruby 3.3.8
+- Ruby 3.3.13
 - Rails 8.1.4.1 (November 2026 security release)
 - PostgreSQL, Puma, Sprockets, and server-rendered HTML
 
 ## Install locally
 
-1. Install Ruby 3.3.8, PostgreSQL, and Bundler.
+1. Install Ruby 3.3.13, PostgreSQL, and Bundler.
 2. Run `bundle install` and **commit the newly generated Gemfile.lock**.
 3. Run `bin/rails db:prepare`.
 4. Run `bin/rails server` and visit http://localhost:3000.
