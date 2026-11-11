@@ -1,11 +1,7 @@
 class Product < ActiveRecord::Base
-	belongs_to :user
-	has_many :transactions
-  has_many :users, through: :transactions
+  belongs_to :user
+  has_many :transactions, dependent: :destroy
+  has_many :buyers, through: :transactions, source: :user
 
-	validates :category, presence: true
-	validates :description, presence: true
-	
-  # add a `user_id` attribute so they can belong to the user
-
+  validates :user, :category, :description, presence: true
 end
