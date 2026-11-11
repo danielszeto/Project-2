@@ -1,26 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Bakr</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-       <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-      <%= stylesheet_link_tag    'application', media: 'all' %>
-      <%= javascript_include_tag 'application' %>
-      <%= csrf_meta_tags %>
-    <script>
-      UPLOADCARE_PUBLIC_KEY = "bb5aacadaab208b51573";
-    </script>
+    <title>BakR | Homemade baking near you</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
   </head>
-<body>
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <%= render "shared/nav" %>
-  </nav> <br />
-
-
-
-  <div class='everything'>
-    <%= yield %>
-  </div>
-
+  <body>
+    <nav class="navbar"><%= render "shared/nav" %></nav>
+    <main class="everything">
+      <% flash.each do |_type, message| %><p role="status" class="flash"><%= message %></p><% end %>
+      <%= yield %>
+    </main>
   </body>
 </html>
