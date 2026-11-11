@@ -1,32 +1,23 @@
-
-
-<% @products.each do |p| %>
-<div>
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      
-      <div class="caption">
-           <% p.users.each do |user| %>
-
-    <h1> <%= user.first_name %> is selling </h1><br />
-
-    Description: <%=p.description %> <br />
-    Category: <%=p.category %> <br />
-    Available:<%=p.available %> <br /><br /><br />
-    <%= image_tag p.product_url, :size => '260x260'%>
-    <br />
-
-    
-    <h5 class='nav-link btn btn-default'><a href="mailto:<%= user.email%>">Email: <%=user.first_name%></a></h5>
-
-    <h5 class='nav-link btn btn-default'><%= link_to "BakR's Profile", user_path(user).downcase %></h5>
-
-
-    <% end %>
+<div class="container">
+  <h1>Fresh from BakR</h1>
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <% if product.product_url.present? %>
+            <%= image_tag product.product_url, size: '260x260', alt: product.description %>
+          <% end %>
+          <div class="caption">
+            <h3><%= link_to product.description, product_path(product) %></h3>
+            <p>Category: <%= product.category %></p>
+            <p>Available: <%= product.available %></p>
+            <% if product.user %>
+              <p><%= link_to "#{product.user.first_name}'s profile", user_path(product.user) %></p>
+              <p><%= mail_to product.user.email, "Contact #{product.user.first_name}" %></p>
+            <% end %>
+          </div>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
-
-<%end%>
-

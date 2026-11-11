@@ -31,10 +31,10 @@
         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Products <b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li><%= link_to "All Products", products_path %></li>
-            <li><%= link_to "Regular", products_path(type: "Regular").downcase %></li>
-            <li><%= link_to "Organic", products_path(type: "Organic").downcase %></li>
-            <li><%= link_to "Vegan", products_path(type: "Vegan").downcase %></li>
-            <li><%= link_to "Gluten Free", products_path(type: "Glutenfree").downcase %></li>
+            <li><%= link_to "Regular", products_path(type: "regular") %></li>
+            <li><%= link_to "Organic", products_path(type: "organic") %></li>
+            <li><%= link_to "Vegan", products_path(type: "vegan") %></li>
+            <li><%= link_to "Gluten Free", products_path(type: "glutenfree") %></li>
         </ul>
     </div>
   </div>

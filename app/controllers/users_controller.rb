@@ -1,47 +1,51 @@
 class UsersController < ApplicationController
+  before_action :require_login, only: [:edit, :update]
+  before_action :set_user, only: [:show, :edit, :update]
+  before_action :require_self, only: [:edit, :update]
 
   def index
-	end
+    @users = User.order(:first_name)
+  end
 
   def new
-		@user = User.new
-		render :new
-	end
+    @user = User.new
+  end
 
-	def create
-	  @user = User.new(user_params)
-
-	  if @user.save
-	  	# sign in user
-	  	session[:user_id] = @user.id
-			redirect_to @user
-     else
-     	p "ERRORS: #{@user.errors.full_messages.to_sentence}"
-			render :new
-	  end
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to @user
+    else
+      render :new
+    end
   end
 
   def edit
-  	@user = User.find(params[:id])
   end
 
   def update
-  	@user = User.find(params[:id])
-  	@user.update_attributes(user_params)
-  	redirect_to	user_path
+    if @user.update(user_params)
+      redirect_to @user, notice: 'Profile updated.'
+    else
+      render :edit
+    end
   end
 
-	def show
-		@user = User.find(params[:id])
-    # TODO: get the user's products & pass them to the view
-    # @products = @user.products
-		render :show
-	end
+  def show
+  end
 
+  private
 
-	private
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-	def user_params
-		params.require(:user).permit(:first_name, :last_name, :email, :password, :age, :location, :bio, :kind, :file)
- 	end
+  def require_self
+    head :forbidden unless @user.id == current_user.id
+  end
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :age, :location, :bio, :file)
+  end
 end

@@ -1,40 +1,16 @@
-	<div class="col-xs-6">
-	<h1>User </h1>
-		<div class="profile">
-
-
-		
-				<%= image_tag @user.file, :size => '260x260', class: "img-circle" %> <br /> 
-				<%= @user.first_name%> <%= @user.last_name%>   <br />
-				Age:<%= @user.age%> <br />
-				Location:<%= @user.location%> <br />
-				Bio:<%= @user.bio%> <br />
-		</div>
-		
-
-	</div>
-
-<div class="col-xs-6">
-	<div class="whatimselling">
-
-		<h1>Currently Baking: </h1>
-
-			<br />
-
-
-		<% @user.products.each do |p| %>
-		<div class="userpostings">
-
-			Description: <%=p.description %> <br />
-			Category: <%=p.category %> <br />
-			Available:<%=p.available %> <br />
-			<%= image_tag p.product_url, :size => '260x260'%> <br />
-			
-			</div>
-			<br />
-<%end%>
-
-
-</div>
-
+<div class="container">
+  <h1><%= @product.description %></h1>
+  <% if @product.product_url.present? %>
+    <%= image_tag @product.product_url, size: '400x400', alt: @product.description %>
+  <% end %>
+  <p>Category: <%= @product.category %></p>
+  <p>Available: <%= @product.available %></p>
+  <% if @product.user %>
+    <p>Made by <%= link_to @product.user.first_name, user_path(@product.user) %></p>
+    <p><%= mail_to @product.user.email, 'Contact baker' %></p>
+  <% end %>
+  <% if current_user && @product.user_id == current_user.id %>
+    <p><%= link_to 'Edit listing', edit_product_path(@product) %></p>
+  <% end %>
+  <p><%= link_to 'All listings', products_path %></p>
 </div>
