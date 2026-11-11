@@ -1,0 +1,38 @@
+name: Rails upgrade checks
+on:
+  push:
+    branches: [upgrade/rails-8-1-2026]
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      RAILS_ENV: test
+      PGUSER: postgres
+      PGPASSWORD: postgres
+      PGHOST: localhost
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3.8
+          bundler-cache: false
+      - name: Install gems
+        run: bundle install
+      - name: Prepare database
+        run: bundle exec rails db:prepare
+      - name: Run tests
+        run: bundle exec rails test
+      - name: Compile assets
+        run: RAILS_ENV=production SECRET_KEY_BASE=temporary-ci-key DATABASE_URL=postgresql://postgres:postgres@localhost/project2_test bundle exec rails assets:precompile
