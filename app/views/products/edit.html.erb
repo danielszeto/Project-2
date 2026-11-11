@@ -1,19 +1,10 @@
-
-
-<div class="editproducts">
-<h1> Edit </h1>
-<%= form_for @product do |f| %>
-  <div class="editproductfields">
-    <%= f.text_field :description, placeholder: "Description" %>
-  </div>
-  <div class="editproductfields">
-    <%= f.text_field :available, placeholder: "Avaiable" %>
-  </div>
-    <div class="editproductfields">
-    Category: <%= f.select :category, [['Regular','Regular'],['Vegan','Vegan'],['Organic','Organic'],['Gluton Free','Gluton Free']]%>
-  </div>
-<div class="editproductfields">
-  <%= f.submit "Edit Changes" %>
-  </div>
-<% end %> 
+<div class="editproducts"><h1>Edit listing</h1>
+  <%= form_with model: @product, local: true do |f| %>
+    <% if @product.errors.any? %><p class="form-errors"><%= @product.errors.full_messages.to_sentence %></p><% end %>
+    <div class="editproductfields"><%= f.label :description %> <%= f.text_field :description, required: true %></div>
+    <div class="editproductfields"><%= f.label :available %> <%= f.text_field :available %></div>
+    <div class="editproductfields"><%= f.label :category %> <%= f.select :category, [['Regular','regular'],['Vegan','vegan'],['Organic','organic'],['Gluten-free','glutenfree']] %></div>
+    <div class="editproductfields"><%= f.label :product_url, "Photo URL" %> <%= f.url_field :product_url %></div>
+    <div class="editproductfields"><%= f.submit "Save changes" %></div>
+  <% end %>
 </div>

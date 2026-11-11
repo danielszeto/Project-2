@@ -1,46 +1,8 @@
 Rails.application.routes.draw do
-
-  root to: "pages#home"
-
-  resources :users
-
-  get "/sign_in", to: "sessions#new"
-
+  root "pages#home"
+  resources :users, only: [:index, :new, :create, :show, :edit, :update]
+  get "/sign_in", to: "sessions#new", as: :sign_in
   post "/sessions", to: "sessions#create"
-
-  delete "/logout", to: "sessions#destroy", as: "logout"
-
-
-  resources :products 
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-
-#       Prefix Verb   URI Pattern                    Controller#Action
-#        users GET    /users(.:format)               users#index
-#              POST   /users(.:format)               users#create
-#     new_user GET    /users/new(.:format)           users#new
-#    edit_user GET    /users/:id/edit(.:format)      users#edit
-#         user GET    /users/:id(.:format)           users#show
-#              PATCH  /users/:id(.:format)           users#update
-#              PUT    /users/:id(.:format)           users#update
-#              DELETE /users/:id(.:format)           users#destroy
-#     products GET    /products(.:format)            products#index
-#              POST   /products(.:format)            products#create
-#  new_product GET    /products/new(.:format)        products#new
-# edit_product GET    /products/:id/edit(.:format)   products#edit
-#      product GET    /products/:id(.:format)        products#show
-#              PATCH  /products/:id(.:format)        products#update
-#              PUT    /products/:id(.:format)        products#update
-#              DELETE /products/:id(.:format)        products#destroy
-#      sign_in GET    /sign_in(.:format)             sessions#new
-#     sessions POST   /sessions(.:format)            sessions#create
-#       logout DELETE /logout(.:format)              sessions#destroy
-#      regular GET    /products/regular(.:format)    products#regular
-#      organic GET    /products/organic(.:format)    products#regular
-#   glutonfree GET    /products/glutonfree(.:format) products#regular
-#        vegan GET    /products/vegan(.:format)      products#regular
-#         root GET    /                              welcome#index
+  delete "/logout", to: "sessions#destroy", as: :logout
+  resources :products
 end
