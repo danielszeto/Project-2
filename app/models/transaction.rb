@@ -1,4 +1,4 @@
-class Transaction < ActiveRecord::Base
-	belongs_to :user
-	belongs_to :product
+class Transaction < ApplicationRecord
+  belongs_to :user
+  belongs_to :product
 end
