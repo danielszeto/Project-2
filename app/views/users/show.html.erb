@@ -11,8 +11,9 @@
 				Bio:<%= @user.bio%> <br />
 		</div>
 
-		<h5 class='nav-link btn btn-default'><%= link_to "Edit Profile", edit_user_path(@user)%></h5>
-		<h5 class='nav-link btn btn-default'><%= link_to 'Delete Profile', @user, method: :delete %></h5>
+		<% if current_user && current_user.id == @user.id %>
+        <h5 class='nav-link btn btn-default'><%= link_to "Edit Profile", edit_user_path(@user) %></h5>
+      <% end %>
 
 	</div>
 
@@ -33,8 +34,10 @@
 			<%= image_tag p.product_url, :size => '260x260'%> <br />
 
 		
-			<h5 class='nav-link btn btn-default'><%= link_to "Edit Posting", edit_product_path(p)%></h5>
-			<h5 class='nav-link btn btn-default'><%= link_to 'Delete Posting', p, method: :delete %></h5>
+			<% if current_user && current_user.id == @user.id %>
+            <h5 class='nav-link btn btn-default'><%= link_to "Edit Posting", edit_product_path(p) %></h5>
+            <h5 class='nav-link btn btn-default'><%= link_to 'Delete Posting', p, method: :delete, data: { confirm: 'Delete this listing?' } %></h5>
+          <% end %>
 		
 			</div>
 			<br />
