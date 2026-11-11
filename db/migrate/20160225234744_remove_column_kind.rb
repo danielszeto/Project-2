@@ -1,4 +1,4 @@
-class RemoveColumnKind < ActiveRecord::Migration
+class RemoveColumnKind < ActiveRecord::Migration[4.2]
   def change
     remove_column :users, :kind, :string
   end
