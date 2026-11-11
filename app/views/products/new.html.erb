@@ -1,23 +1,11 @@
-<div class="header-newprod">
-<h1> What are you baking?</h1>
-</div>
-
-<div class ="addingproducts">
-
-
-<%= form_for @product do |f| %>
-  <div class="newproducts">
-    <%= f.text_field :description, placeholder: "Description" %>
-  </div>
-  <div class="newproducts">
-    <%= f.text_field :available, placeholder: "Available" %>
-  </div>
-  <div class="newproducts">
-    <%= f.select :category, [['Regular','regular'],['Vegan','vegan'],['Organic','organic'],['Glutenfree','glutenfree']]%>
-  </div>
-  <div class="newproducts">
-  <input type="hidden" role="uploadcare-uploader" name="product[product_url]"/>
-  <div class="newproducts">
-  <%=f.submit "Add Product" %>
-<% end %> 
+<div class="header-newprod"><h1>What are you baking?</h1></div>
+<div class="addingproducts">
+  <%= form_with model: @product, local: true do |f| %>
+    <% if @product.errors.any? %><p class="form-errors"><%= @product.errors.full_messages.to_sentence %></p><% end %>
+    <div class="newproducts"><%= f.label :description %> <%= f.text_field :description, required: true %></div>
+    <div class="newproducts"><%= f.label :available, "Availability" %> <%= f.text_field :available %></div>
+    <div class="newproducts"><%= f.label :category %> <%= f.select :category, [['Regular','regular'],['Vegan','vegan'],['Organic','organic'],['Gluten-free','glutenfree']] %></div>
+    <div class="newproducts"><%= f.label :product_url, "Photo URL" %> <%= f.url_field :product_url, placeholder: "https://..." %></div>
+    <div class="newproducts"><%= f.submit "Add product" %></div>
+  <% end %>
 </div>
